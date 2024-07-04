@@ -1,0 +1,31 @@
+# Tipos de datos 
+
+Se dividen entre primitivos y no primitivos.
+La principal diferencia es que los primitivos son inmutables, es decir, no pueden cambiarse con métodos externos.
+Los tipos de datos no primitivos son mutables, es décir, se pueden cambiar o modificar por métodos externos, como el método push de un Array.
+
+# Datos primitivos 
+
+    Los datos primitivos son los siguientes:
+        1. Number: float/integer.
+        2. Strings: ""/''/``.
+        3. Booleans: True/false.
+        4. Null: NaN/Null.
+        5. Undefinded: NaN/Undefinded.
+    
+    Sus características es que se pueden comparar con comparadores lógicos y de valor entre sí.
+
+# Datos No primitivos
+
+    Los datos no primitivos son los siguientes:
+        1. Objetos/objects
+        2. Funciones/Functions
+        3. Matrices/matrix.
+
+    No se pueden comparar con comparadores de valor entre sí. Incluso si sus valores son los mismos, no son estrictamente iguales.
+    Solamente pueden ser iguales si son dos objetos subyacentes, es decir:
+
+    let num = [1,2,3];
+    let numeros = nums;
+
+    conole.log(num == numeros); // Verdadero/true
