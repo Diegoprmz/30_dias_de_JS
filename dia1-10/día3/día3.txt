@@ -1,0 +1,70 @@
+Día 3
+
+# Valores Booleanos
+
+    Representan únicamente dos valores: true o false.
+
+    Los tipos de valores verdaderos por defecto son: 
+        1. Todos los números (positivos y negativos) a excepción del 0.
+        2. Todas las srings y arrays, excepto los estrings vacíos (" ").
+        3. El booleano "True"
+    Los tipos de valores falsos por defecto son:
+        1. 0
+        2. 0n
+        3. null
+        4. undefined
+        5. NaN
+        6. El booleano false
+        7. '', "", ``, strings vácios
+    Este tipo de valores podemos utilizarlos en comparaciones lógicas para después.
+
+# Estos son los operadores de asignación, nos ayudan a ahorrar código haciendo shorthands de las operaciones con asignación.
+    dia1-10/día3/img/assignment_operators.png
+
+# Estos son los operadores de comparación. Sirven para hacer conparaciones lógicas de valores. Estos comparadores devuelven Booleanos
+    dia1-10/día3/img/comparison_operators.png
+
+    (A mi siempre se me olvidaba la diferencia entre "==" y "===". La diferencia es que el "==" compara únicamente el valor, es décir, una equivalencia; mientras que "===" compara el valor y el tipo de dato, es decir, que sea idéntico.)
+
+# Operadores lógicos 
+    
+    Los operadores lógicos también arrojan únicamente valores booleanos. Los operadores lógicos son los siguientes:
+        1. && (ampersand) 
+            Funciona como "and", es decir, si se cumple una condición y otra, entonces el resultado será true. De no cumplirse una de las dos condiciones el resultado será false.
+        2. || (pipe)
+            Funciona como "or", es decir, si se cunple una condición u otra el resultado será true. Solo tiene que haber una condición verdadera para que el resultado sea true.
+        3. ! (negación)
+            Funciona negando una la aseveración, es decir, si hay una condición verdadera la transformará en falsa. Ejemplo:
+                let check = 4 > 3; //True (4 es mayor a 3)
+                let noCheck = !(4 > 3); //False (Aunque 4 es mayor a 3, el operador "!" invierte esta condición, por lo que devuelve false)
+
+# Operadores de incremento
+
+    Funciona como una suma de 1 en uno cada vez que se utiliza dicho operador, se puede usar antes o después del valor o variable. 
+
+        1. Pre-incremento: Primero se hace el aumento antes de que aparezca la variable, por lo que en el momento en que se declara la variable, ya ha aumentado en 1.
+            let count = 0;
+            console.log(++count); // 1
+            console.log(count); // 1
+
+        2. Post-incremento: Aquí se aumenta en uno después de que se haya declarado la variable, esto hace que al momento no se vea reflejado, pero la siguiente vez que sea llamada, su valor habrá aumentado.
+            let conunt = 0;
+            console.log(count++); // 
+            console.log(count); // 1
+
+# Operadores de decremento
+
+    Funciona como una resta de 1 en uno cada vez que se utiliza dicho operador, se puede usar antes o después del valor o variable. 
+
+        1. Pre-decremento: Lo mismo de arriba pero restando en 1.
+            let count = 0;
+            console.log(--count); // 1
+            console.log(count); // 1
+
+        2. Post-decremento: Exactamente lo mismo de arriba pero después de ser invocada.
+            let conunt = 0;
+            console.log(count--); // 
+            console.log(count); // 1
+
+# El fokin operador "TERNARIO"
+
