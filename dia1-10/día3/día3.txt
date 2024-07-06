@@ -1,6 +1,6 @@
 Día 3
 
-# Valores Booleanos
+## OPERADORES CON BOOLEANOS ##
 
     Representan únicamente dos valores: true o false.
 
@@ -67,4 +67,97 @@ Día 3
             console.log(count); // 1
 
 # El fokin operador "TERNARIO"
+
+    El operador ternario funciona de una manera relativamente sencilla, se llama así por que es el único operador en JS que funciona con tres operandos (tres, terna, ternario...). La sintaxis es la siguiente: 
+        condición ? expresión1 : expresión2
+
+    Esto se traduce a que si la condición es verdadera, se devuelve la expresión1, de ser falsa, se devuelve la expresión2. Esto se vuelve sumamente útil cuando queremos usar una estructura "if" pero simplificada.
+
+        Ejemplo díagmos que estamos construyendo una app de comida con un sistema de membresías, si eres miembro se te da un precio especial, de no serlo, se te dará un precio público.
+
+        let isMember = false;
+        console.log("El precio por la comida será de " + (isMember ? "150.00MXN" : "230.00MXN"));
+
+        Al no ser miembro, el output en consola sería El precio por la comida será de 230.00MXN.
+
+## MÉTODOS WINDOW ##
+
+# Método alert()
+
+    El método alert() muestra una ventana emergente de alerta con un mensaje específico. La sintaxis es simple.
+
+        alert(message);
+        alert("Bienvenido a 30 días de JS Edición Diego");
+
+# Método prompt()
+
+    El método prompt() muestra una ventana emergente con un imput para que el usuario ingrese texto. Devuelve el texto como un string, de cerrar el cuadro de diálogo devuelve null. La sintaxis es la siguiente: 
+
+        let diálogo = prompt("Texto 1","Texto alternativo");
+
+# Método confirm()
+
+    Muestra un cuadro de diálogo con un mensaje específico sobre lo que se quiere realizar, éste aparecerá con un botón de aceptar y cancelar. El cuadro se suele utilizar para pedir permiso de ejecutar algo. Utiliza una string como argumento que se muetra en el cuadro de diálogo. Devuelve un booleano como return.
+
+        const acuerdo = confirm("¿Estás de acuerdo con la instalación?");
+        console.log(acuerdo); // El resultado será true or false dependiendo si acepta o cancela.
+
+## OBJETO TIEMPO (DATE) ##
+
+    Los objetos de tiempo justamente son eso, un objeto que nos ayuda a manipular el tiempo con métodos de tipo get, adjunto el link a dicha tabla para tener un panorama completo. 
+
+    dia1-10/día3/img/date_time_object.png
+
+    A continuación están la forma de manejar dicho objeto. 
+
+# Crear un objeto tiempo
+
+    El objeto de tiempo se crea de la siguiente manera:
+
+        const hoy = new Date();
+        console.log(hoy); // Sat Jul 06 2024 00:26:33 GMT-0600 (hora estándar central)
+
+# Para obtener un año completo
+
+    Extraemos con el método get:
+
+        const hoy = new Date();
+        console.log(hoy.getFullYear()); // 2024
+
+# Para obtener el mes
+
+        const hoy = new Date();
+        console.log(hoy.getMonth()); // 6, porque es julio. El formato ed del (1-12)
+
+# Para obtener fecha
+
+        const hoy = new Date();
+        console.log(hoy.getDate()); // 6 Porque es el sexto día
+
+# Para obtener horas
+
+        const hoy = new Date();
+        console.log(hoy.getHours()); // 0
+
+# Para obtener minutos
+
+        const hoy = new Date();
+        console.log(hoy.getMinutes()); // 42 (Minutos)
+
+# Para obtener segundos
+
+        const hoy = new Date();
+        console.log(hoy.getSeconds()); // 48 (Segundos) 
+
+# Para obtener tiempo (Forma de tiempo Unix). 
+
+    1. getTime()
+
+        const hoy = new Date();
+        console.log(hoy.getTime());// 1720247876965 La cantidad de milisegundos desde el 1 de enero de 1970 hasta el 06 de julio de 2024
+
+    2. Date.now()
+
+        const allSeconds = Date.now();
+        console.log(allSeconds); // 1720248094371
 
