@@ -120,3 +120,23 @@ console.log("No estuvo tan mal");
 //EJERCICIO 12
 let separandoFrases = fraseEjercicio17.substring(35, 55);
 console.log(separandoFrases);
+
+//EJERCICIOS NIVEL 3
+
+//EJERCICIO 1
+let fraseAmor = "El amor es lo mejor que hay en este mundo. Algunos encontraron su amor y algunos todavía están buscando su amor.";
+let contadorDeAmor = fraseAmor.split("amor").length - 1;
+console.log(contadorDeAmor);
+//EJERCICIO 2
+let frasePorque = "No puedes terminar una oración con porque porque porque es una conjunción";
+let contadorPorque = frasePorque.match(/porque/g).length;
+console.log(contadorPorque);
+//EJERCICIO 3
+const sentence ="%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching";
+let desencriptador = sentence.replace(/[^\w\s]/g, "");
+console.log(desencriptador);
+//EJERCICIO 4
+const cuantoGana = "'Él gana 5000 euros de salario por mes, bono anual de 10000 euros, cursos en línea de 15000 euros por mes.'";
+let salario = cuantoGana.match(/\d+/g).map(Number);
+let salarioTotal = salario[0] + salario[1] + salario[2];
+console.log(salarioTotal);
