@@ -160,4 +160,3 @@ Día 3
 
         const allSeconds = Date.now();
         console.log(allSeconds); // 1720248094371
-
