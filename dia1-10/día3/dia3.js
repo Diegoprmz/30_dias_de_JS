@@ -122,6 +122,150 @@ const fechaEjercicio7 = new Date();
     const minutosActual = fechaEjercicio7.getMinutes(); console.log(minutosActual);
     const segundosUnix = fechaEjercicio7.getTime(); console.log(segundosUnix);
 
-console.log('## EJERCICIOS NIVEL 2');
+console.log('## EJERCICIOS NIVEL 2 ##');
+
+//EJERCICIO 1
+/* let alturaTriangulo = prompt("ingrese la altura del triángul");
+let baseTriangulo = prompt("ingrese la base del triángulo");
+
+let alturaTrianguloNumero = parseFloat(alturaTriangulo);
+let baseTrianguloNumero = parseFloat(baseTriangulo);
+
+const formulaAreaTriangulo = (alturaTrianguloNumero * baseTrianguloNumero) /2 ; */ //Salió perfecto pero lo voy a comentar para que no moleste lo demás
+
+/* alert(formulaAreaTriangulo); */
+
+//EJERCICIO 2
+
+/* let ladoA = prompt("Ingrese el lado A del triángulo");
+let ladoB = prompt("Ingrese el lado B del triángulo");
+let ladoC = prompt("Ingrese el lado C del triángulo");
+
+let ladoANumero = parseFloat(ladoA);
+let ladoBNumero = parseFloat(ladoB);
+let ladoCNumero = parseFloat(ladoC);
+
+const perimetroTriangulo = ladoANumero + ladoBNumero + ladoCNumero;
+alert(perimetroTriangulo); */
+
+//EJERCICIO 3
+
+/* let largoRectangulo = prompt("Introduzca el largo del rectángulo");
+let anchoRectangulo = prompt("Introduzca el ancho del rectángulo");
+
+let largo = parseFloat(largoRectangulo);
+let ancho = parseFloat(anchoRectangulo);
+
+const areaReactangulo = largo * ancho;
+const perimetroRectangulo = areaReactangulo * 2; */
+
+//EJERCICIO 4
+
+const pi = 3.14;
+
+//let radio = prompt("Introduzca el radio del círculo");
+//let radioNumero = parseFloat(radio);
+
+//const areaCirculo = pi * (radioNumero*radioNumero);
+//const perimetroCirculo = 2 * pi * radioNumero;
+
+//EJERCICIO 5
+
+let m = 2;
+let interseccionY = -2;
+let interseccionX = (-interseccionY) / m;
+
+console.log(interseccionX);
+console.log(interseccionY);
+console.log(m);
+
+//EJERCICIO 6
+
+let primerEcuacion = [6,10];
+let segundaEcuacion = [2,2];
+
+let x1 = primerEcuacion[0];
+let x2 = segundaEcuacion[0];
+
+let y1 = primerEcuacion[1];
+let y2 = segundaEcuacion[1];
+
+const pendiente = ( y2 - y1 )/( x2 - x1 );
+console.log(`Esta es la pendiente: ${Math.abs(pendiente)}`);
+
+//EJERCICIO 7
+
+let comparacionDePendientes = m < pendiente;
+console.log(comparacionDePendientes);
+
+//EJERCICIO 8
+
+let x = Math.floor(Math.random() * 100 ) + 1;
+let valorDeY = (x ** 2) + ( 6 * x ) + 9;
+console.log(`Para valores de X en un rángo de 1 a 100 el resultado de y es: ${valorDeY}`);
+
+//EJERCICIO 9
+
+/* let horasDeTrabajo = prompt("Ingrese las horas trabajadas por semana:");
+let salarioPorHora = prompt("Ingrese la tarifa por hora:");
+
+console.log(`Su ganancia semanal es de $${horasDeTrabajo * salarioPorHora}`); */
+
+//EJERCICIO 10
+
+//let nombre = prompt('Escriba su nombre: ')
+//console.log(`${nombre.length > 7 ? 'Tu nombre es largo' : 'Tu nombre es corto'} `);
+
+//EJERCICIO 11
+
+//let nombre = prompt('Escriba su nombre');
+//let apellido = prompt('Escriba su apellido');
+
+//console.log(`${nombre.length > apellido.length ? `Tu primer nombre, ${nombre}, es más largo que tu apellido, ${apellido}` : `Tu primer apellido, ${apellido}, es más largo que tu nombre, ${nombre}`}`);
+
+//EJERCICIO 12
+
+const myAge = 1000;
+const yourAge = 22;
+
+console.log(`Soy ${myAge - yourAge} años mayor que tú.`);
+
+//EJERCICIO 13
+
+/* let añoDeNacimiento = prompt('Escriba su año de nacimiento');
+let edad = 2024 - parseInt(añoDeNacimiento2003);
+
+console.log(edad > 18 ? `Tienes ${edad} años. Tienes la edad para conducir. ` : `Tienes ${edad} años. Podrás conducir dentro de ${edad + (18 - edad)} años.`); */ 
+
+//EJERCICIO 14
+
+/* let añosVididos = prompt('Escriba su edad');
+let segundosVividos = (añosVididos * 365) * 3600;
+
+console.log(`Viviste ${segundosVividos} segundos`); */
+
+//EJERCICIO 15
+
+let añoActual = hoy.getFullYear();
+let mesActual = hoy.getMonth();
+let mesDosDigitos = String(mesActual).padStart(2, '0');
+
+let diaActual = hoy.getDate();
+let diasDosDigitos = String(diaActual).padStart(2, '0');
+
+let horasActual = hoy.getHours();
+let horaDosDigitos = String(horasActual).padStart(2, '0');
+
+let minutoActual = hoy.getMinutes();
+let minutosDosDigitos = String(minutoActual).padStart(2, '0');
 
 
+console.log(`${añoActual}-${mesDosDigitos}-${diasDosDigitos}  ${horaDosDigitos}:${minutosDosDigitos}`);
+console.log(`${diasDosDigitos}-${mesDosDigitos}-${añoActual}  ${horaDosDigitos}:${minutosDosDigitos}`);
+console.log(`${diasDosDigitos}/${mesDosDigitos}/${añoActual}  ${horaDosDigitos}:${minutosDosDigitos}`);
+
+console.log(`## EJERCICIOS NIVEL 3 ##`);
+
+//EJERCICIO 1
+
+console.log(`${añoActual}-${mesDosDigitos}-${diasDosDigitos}  ${horaDosDigitos}:${minutosDosDigitos}`);
