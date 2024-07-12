@@ -1,3 +1,307 @@
 ## Día 5. 
 En este día vamos a ver sobre Arrays y los métodos para manipularlos.
 
+Un array (matriz o arreglo) puede almacenar distintos valores, cada uno con un espacio diferente de memoria, se puede acceder a cada uno de esos valores con su indice o index, que va desde el cero (0) hasta la longitud del array más uno, es decir, si el array tiene 6 elementos, el index comenzará en el 0 y terminará en el 5.
+
+Un array es una colección de diferentes tipos de datos que están ordenados y son cambiables. Un array permite almacenar elementos duplicados y diferentes tipos de datos. Un array puede estar vacio o puede tener diferentes valores de diferentes tipos de datos.
+
+
+
+# Cómo crear un array vacío.
+
+Hay distintas formas de crear un array, normalmente se suele utilizar el const para declara arrays, ya que de esta manera no podemos a utilizar este nombre para otra variable.
+
+    Utilizando el constructor de Arrays 
+        const arr = Array();
+        console.log(arr) // []
+
+    Utilizando corchetes
+        const arr = [];
+        console.log(arr) // []
+
+
+
+# Cómo crear un array con valores.
+
+De la misma forma que creamos un array vacío, lo llenaremos con valores de distintos tipos. 
+Ejemplo:
+
+    const numbers = [0, 3.14, 9.81, 37, 98.6, 100]; // array de  números
+    const fruits = ["banana", "orange", "mango", "lemon"]; // array de strings, Fruits
+    const vegetables = ["Tomato", "Potato", "Cabbage", "Onion", "Carrot"]; // array de strings, vegetables
+    const animalProducts = ["milk", "meat", "butter", "yoghurt"]; // array de strings, products
+    const webTechs = ["HTML", "CSS", "JS", "React", "Redux", "Node", "MongDB"]; // array web, technology
+    const countries = ["Finland", "Denmark", "Sweden", "Norway", "Iceland"]; // array de strings, country
+
+    const arr = [
+        "Asabeneh",
+        250,
+        true,
+        { country: "Finland", city: "Helsinki" },
+        { skills: ["HTML", "CSS", "JS", "React", "Python"] },
+        ]; // arr contiene diferentes tipos de datos
+
+Usamos el método .length para encontrar la longitud del Array.
+
+// Imprimimos el array y su longitud
+
+    console.log("Numbers:", numbers);
+    console.log("Number of numbers:", numbers.length);
+
+    console.log("Fruits:", fruits);
+    console.log("Number of fruits:", fruits.length);
+
+    console.log("Vegetables:", vegetables);
+    console.log("Number of vegetables:", vegetables.length);
+
+    console.log("Animal products:", animalProducts);
+    console.log("Number of animal products:", animalProducts.length);
+
+    console.log("Web technologies:", webTechs);
+    console.log("Number of web technologies:", webTechs.length);
+
+    console.log("Countries:", countries);
+    console.log("Number of countries:", countries.length);
+
+
+Como vimos en los días anteriores, podemos crear arrays a partir de strings utilizando el método .split().
+Ejemplo:
+    let js = "JavaScript";
+        const charsInJavaScript = js.split("");
+        console.log(charsInJavaScript); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+    let companiesString = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon";
+    const companies = companiesString.split(",");
+    console.log(companies); // ["Facebook", " Google", " Microsoft", " Apple", " IBM", " Oracle", " Amazon"]
+
+    let txt = "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
+        const words = txt.split(" ");
+        console.log(words);
+        // ["I", "love", "teaching", "and", "empowering", "people.", "I", "teach", "HTML,", "CSS,", "JS,", "React,", "Python"]
+
+#Accediendo a los valores de un array utilizando su index.
+
+Como ya mencionamos al inicio, podemos accedes a los elementos de un array accediendo a su indice el cual comienza en 0.
+Ejemplo:
+
+    const frutas = ['banana(0)', 'naranja(1)', 'mango(2)', 'limon(3)']
+
+Si quisieramos acceder a un elemento del array podriamos hacer lo siguiente:
+
+    let primeraFruta = frutas[0];
+    console.log(primeraFruta); // 'banana'
+
+O también puedes acceder a esa misma fruta de la manera:
+
+    console.log(frutas[0]); // 'banana'
+
+
+
+# Modificar elemetos de un aary.
+
+Como mencionamos al inicio del día, los arrays son mutables, es decir, se pueden modificar. Hay distintas formas de modificar un array, ya sea con métodos o como esta:
+
+    const numeros = [1, 2, 3, 4, 5]
+    numbers[0] = 10;
+    numbers[1] = 20;
+
+    console.log(numbers); // [10, 20, 3, 4, 5]
+
+
+# Métodos para manipular arrays
+
+Ahora empezaremos a ver cuáles son los métodos para manipular arrays. 
+
+    # Constructor de arrays
+
+        const arr = Array(); // Crea un array vácio
+        const ochoValores = Array(8); // Crea 8 valores vacíos.
+
+    # Creando valores estáticos con fill
+
+        const ochoXValores = Array(8).fill("X"); // Crea ocho valores de elementos llenos de 'X'
+        console.log(ochoXValores); // ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X',]
+
+    # Concatenación de arrays usando Concatenación
+
+        const firtsList = [1, 2, 3]
+        const secondList = [4, 5, 6]
+        const thirdList = firtsList.concat(secondList);
+
+        console.log(thirdList); // [1, 2, 3, 4, 5, 6]
+
+    # Obtener la longitud de un array 
+
+        const numbers = [1, 2, 3, 4, 5]
+        console.log(numbers.length); // 5 (Es el tamaño del array)
+
+    # Obtener el index de un elemento de un array
+
+        indexOf() Es un método que devuelve la posición de un elemento en un array atendiendo a su índice, si existe devuelve el indice, sino, devuelve -1:
+
+            const numbers = [1, 2, 3, 4, 5]
+            console.log(indexOf(5)); // 4
+            console.log(indexOf(0)); // -1
+            console.log(indexOf(1)); // 0
+            console.log(indexOf(6)); // -1
+
+    # obtener el último index de un elemento en un array
+
+        lastIndexOf() Da la posición del último elemento del array. Si existe, devuelve el index, de lo contrario, devolverá -1
+
+            const numbers = [1, 2, 3, 4, 5]
+
+            console.log(lastindexOf(2)); // 7
+            console.log(lastindexOf(0)); // -1
+            console.log(lastindexOf(1)); // 6
+            console.log(lastindexOf(4)); // 3
+            console.log(lastindexOf(6)); // -1
+
+    # Saber si un elemento existe en un Array
+
+        includes() Devuelve un booleano en razón si el elemento que buscamos existe o no en el Array.
+
+            const numbers = [1, 2, 3, 4, 5]
+
+            console.log(numbers.includes(5)); // true
+            console.log(numbers.includes(0)); // false
+            console.log(numbers.includes(1)); // true
+            console.log(numbers.includes(6)); // false
+
+    # Comprobar de un array
+    
+        Array.isArray() Verifica un tipo de dato de un array
+
+            const numbers = [1, 2, 3, 4, 5]
+            console.log(Array.isArray(numbers)); // true
+
+            const number = 100;
+            console.log(Array.isArray(number)); // false
+
+    # Convertir un array a una strings
+
+        toString() literalmente convierte un array a una string 
+
+            const numbers = [1, 2, 3, 4, 5] 
+            console.log(numbers.toString()); // "1,2,3,4,5"
+
+    # Unir elementos de un array 
+
+        join() Se usa para unir los elementos de un array, el argumento del método join se unirá y regresará como una cadena. De forma predeterminada se unirá con una coma, pero podemos definir como se unirán en el parametro del método.
+
+            const numbers = [1, 2, 3, 4, 5]
+            console.log(numbers.join()); // "1, 2, 3, 4, 5"
+
+            const names = ["Asabeneh", "Mathias", "Elias", "Brook"]
+
+            console.log(names.join()); // Asabeneh,Mathias,Elias,Brook
+            console.log(names.join("")); // AsabenehMathiasEliasBrook
+            console.log(names.join(" ")); // Asabeneh Mathias Elias Brook
+            console.log(names.join(", ")); // Asabeneh, Mathias, Elias, Brook
+            console.log(names.join(" # ")); // Asabeneh # Mathias # Elias # Brook
+
+    # Para cortar elemetos de un array
+    
+        slice() Para cortar varios elemetnos en un rango que nosotros daremos como parámetro. Toma dos parametros, la posición inicial (inclusiva) yu la posición final (exclusiva). 
+
+        const numbers = [1, 2, 3, 4, 5]
+        
+        console.log(numbers.slice()); // corta todos los elementos
+        console.log(numbers.slice(0)); // corta todos los elementos
+        console.log(numbers.slice(0, numbers.length)); // copia todos los elementos
+        console.log(numbers.slice(1, 4)); // [2, 3, 4] No incluye la posición final
+
+    # Para cortar y reemplazar elementos de un array
+
+        splice() Toma 3 valores, el primero dicta dónde empezará el conteo, el segundo cuántos valores se eliminará, el tercero y opcional reemplaza los valores que fueron eliminados.
+
+            const numbers = [1, 2, 3, 4, 5]
+            numbers.splice();
+            console.log(numbers.splice()); // Elimina todos los valores
+
+            const numbersMas = [1, 2, 3, 4, 5, 6]
+            numbers.splice(3, 4, 7, 8, 9);
+            console.lon(numbers.splice(3, 4, 7, 8, 9)); // [1, 2, 3, 7, 8, 9] Elimina los elementos a partir del tercer índice y los reemplaza con los valores añadidos.
+
+    # Agregar elemetos a un array usando push
+
+        push() Agrega elementos al final de un array. 
+
+            const arr = ["item1", "item2", "item3"]
+            arr.push("new item");
+            console.log(arr); // ["item1", "item2", "item3", "new item"]
+
+    # Eliminando el último elemento de un array 
+
+        pop() Elimina el elemento final
+
+            const numbers = [1, 2, 3, 4, 5]
+            numbers.pop(); // Elimina el último elemento
+            console.log(numbers); // [1, 2, 3, 4]
+
+    # Elimina un elemento al inicio
+
+        shift() Eliminación de un elemento al comienzo de un array
+
+            const numbers = [1, 2, 3, 4, 5]
+            const.shift(); // Elimina un elemento del inicio.
+            console.log(numbers); // [2, 3, 4, 5]
+
+    # Añade un elemento al inicio
+
+        unshift() Agrega un elemento al inicio del array
+
+            const numbers = [1, 2, 3, 4, 5]
+            numbers.unshift(0); // Añade un elemento al inicio
+            console.log(numbers); // [0, 1, 2, 3, 4, 5]
+
+    # Invertir el orden de un array
+
+        reverse() Naturalmente, invierte el orden de un array
+
+            const numbers = [1, 2, 3, 4, 5]
+            numbers.reverse(); // Invierte el array
+            console.log(numbers); // [5, 4, 3, 2, 1]
+
+            numbers.reverse();
+            console.log(numbers); // [1, 2, 3, 4, 5]
+
+    # Ordenar elementos de un array 
+
+        sort() Ordena los elementos de un array en forma ascendente. Sort toma una función call back. En los siguientes días aprenderemos sobre dichas funciones.
+
+            const webTechs = [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "Redux",
+              "Node",
+              "MongoDB",
+            ];
+
+            webTechs.sort();
+            console.log(webTechs); // ["CSS", "HTML", "JavaScript", "MongoDB", "Node", "React", "Redux"]
+
+            webTechs.reverse(); // despues de acomodarlas, podemos utilizar un reverse
+            console.log(webTechs); // ["Redux", "React", "Node", "MongoDB", "JavaScript", "HTML", "CSS"]
+
+    # Array de arrays
+
+        Los arrays pueden almacenar distintos tipos de datos, entre ellos, mismos arrays
+
+            const firstNums = [1, 2, 3];
+            const secondNums = [1, 4, 9];
+            const arrayOfArray = [
+              [1, 2, 3],
+              [1, 2, 3],
+            ];
+            console.log(arrayOfArray[0]); // [1, 2, 3]
+
+            const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
+            const backEnd = ["Node", "Express", "MongoDB"];
+            const fullStack = [frontEnd, backEnd];
+            console.log(fullStack); // [["HTML", "CSS", "JS", "React", "Redux"], ["Node", "Express", "MongoDB"]]
+            console.log(fullStack.length); // 2
+            console.log(fullStack[0]); // ["HTML", "CSS", "JS", "React", "Redux"]
+            console.log(fullStack[1]); // ["Node", "Express", "MongoDB"]
