@@ -1,0 +1,3 @@
+## Día 5. 
+En este día vamos a ver sobre Arrays y los métodos para manipularlos.
+
