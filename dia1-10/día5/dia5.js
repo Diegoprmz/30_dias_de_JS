@@ -179,4 +179,31 @@ const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
     let edadMaxima = ages[ages.length - 1];
     console.log(edadMinima);
     console.log(edadMaxima);
+    let edadMedia = (ages[ages.length / 2] + ages[ages.length / 2  + 1 ])/2
+    console.log(edadMedia);
+    let edadPromedio = (ages[0]+ages[1]+ages[2]+ages[3]+ages[4]+ages[5]+ages[6]+ages[7]+ages[8]+ages[9])/ages.length
+    console.log(edadPromedio);
+    let rangoEdades = ages[9] - ages[0]
+    console.log(rangoEdades);
+    let minimoMenosPromedio = parseInt(Math.abs(ages[0] - edadPromedio));
+    let maximoMenosPromedio = parseInt(Math.abs(ages[ages.length - 1] - edadPromedio));
+    console.log(minimoMenosPromedio);
+    console.log(maximoMenosPromedio);
     console.log(ages);
+
+//EJERCICIO 2
+/* countries.splice(0, 10);
+console.log(countries); */
+
+//EJERCICIO 3
+let longitudPaises = countries.length/2;
+let paisDelMedio = Math.ceil(longitudPaises);
+console.log(paisDelMedio);
+
+//EJERCICIO 4
+countries.unshift("Diegolandia");
+let puntoMedioPaises = countries.length/2;
+const primeraMitad = countries.slice(0, puntoMedioPaises);
+const segundaMitad = countries.slice(puntoMedioPaises);
+console.log(primeraMitad);
+console.log(segundaMitad);
