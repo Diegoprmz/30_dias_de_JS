@@ -202,7 +202,7 @@ Ahora empezaremos a ver cuáles son los métodos para manipular arrays.
 
     # Para cortar elemetos de un array
     
-        slice() Para cortar varios elemetnos en un rango que nosotros daremos como parámetro. Toma dos parametros, la posición inicial (inclusiva) yu la posición final (exclusiva). 
+        slice() Para cortar varios elemetnos en un rango que nosotros daremos como parámetro. Toma dos parametros, la posición inicial (inclusiva) y la posición final (exclusiva). 
 
         const numbers = [1, 2, 3, 4, 5]
         
@@ -213,7 +213,7 @@ Ahora empezaremos a ver cuáles son los métodos para manipular arrays.
 
     # Para cortar y reemplazar elementos de un array
 
-        splice() Toma 3 valores, el primero dicta dónde empezará el conteo, el segundo cuántos valores se eliminará, el tercero y opcional reemplaza los valores que fueron eliminados.
+        splice() Toma 3 valores, el primero dicta dónde empezará el conteo, el segundo cuántos valores se eliminarán, el tercero y opcional reemplaza los valores que fueron eliminados.
 
             const numbers = [1, 2, 3, 4, 5]
             numbers.splice();
