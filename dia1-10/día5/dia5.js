@@ -136,3 +136,47 @@ console.log(eliminandoTodoElArray);
 
 console.log("## EJERCICIOS NIVEL 2 ##");
 
+//EJERCICIO 1
+console.log("Ejercicio 1 terminado");
+
+//EJERCICIO 2
+let text = "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
+const textSinPuntos = text.replace(/[.,:;!?]/g, "");
+const textArray = textSinPuntos.split(/\s+/);
+console.log(textArray.length);
+console.log(textArray);
+
+//EJERCICIO 3
+let shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
+    shoppingCart.unshift("Meat");
+    shoppingCart.push("Sugar");
+    shoppingCart.splice(4, 1);
+    let indice = shoppingCart.indexOf("Tea");
+    indice !== -1 ? shoppingCart[indice] = "Te Verde" : "";
+    console.log(shoppingCart);
+
+//EJERCICIO 4
+import  { countries }  from "./countries.js";
+countries.includes("Ethiopia") ? console.log("Ethiopia") : countries.push("Ethiopia");
+
+//EJERCICIO 5
+import { webTechs } from "./web_techs.js";
+console.log(webTechs.includes("SASS"));
+webTechs.includes("SASS") ? console.log("Sass es un preprocesador de CSS") : webTechs.push("SASS"), console.log("Sass es un preprocesador de CSS");
+
+//EJERCICIO 6
+const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
+const backEnd = ["Node", "Express", "MongoDB"];
+const fullStack = frontEnd.concat(backEnd);
+console.log(fullStack);
+
+console.log("## EJERCICIOS NIVEL 3 ##");
+
+//EJERCICIO 1
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+    ages.sort();
+    let edadMinima = ages[0];
+    let edadMaxima = ages[ages.length - 1];
+    console.log(edadMinima);
+    console.log(edadMaxima);
+    console.log(ages);
