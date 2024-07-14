@@ -84,15 +84,64 @@ Ejemplo:
 
 # Búcle for of
 
-Usamos este búcle para iterar a través de un array si no estamos interesados en el index de cada elemento del array.
+Usamos este búcle para iterar a través de un iterable como un array, un string, mapas, conjuntos, etc. si no estamos interesados en el index de cada elemento del iterable.
 
 Sintaxis:
     for (variable of iterable) {
         // código a iterar
     }
 
+Funcionamiento:
+En cada iteración el valor del elemento del iterable se asigna a la variable declarada dentro del búcle.
+El bloque de código dentro del búcle se ejecutará.
+El búcle se repetirá hasta que se haya iterado por cada uno de los elementos del iterable.
+
 Ejemplo:
     const numbers  = [1, 2, 3, 4, 5];
     for (const num of numbers){
         console.log(num)
     }
+    // 1, 2, 3, 4, 5
+
+    for (const num of numbers) {
+        console.log(num * num);
+    }
+    // 1, 4, 9, 16, 25
+
+    let sum = 0;
+    for (const num of numbers) {
+        sum += num;
+    }
+    console.log(sum); // 15 
+
+# break;
+
+El break rompe con el búcle y te saca directamente. Suele utilizarse dentro de un if ya que podemos controlar cuándo queremos salir de la iteración.
+
+Sintaxis:
+    break;
+
+Ejemplo:
+    for (let i = 0; i <= 5; i++) {
+        if(i == 3){
+            break;
+        }
+        console.log(i);
+    }
+    // 0, 1, 2   (El búcle a pesar de tener que repetirse 6 veces, solo se repite tres, pues al ser i igual a 3, se interrumpe el búcle y automáticamente sale de él.)
+
+# continue;
+
+Se usa la palabra clave continue para omitir ciertas iteraciones, naturalmente también se utiliza junto con un if para declarar la condición.
+
+Sintaxis: 
+    continue;
+
+Ejemplo:
+    for (let i = 0; i <= 5 i++) {
+        if (i == 3){
+            continue;
+        }
+        console.log(i);
+    }
+    // 0, 1, 2, 4, 5   (Aquí el búcle salta la tercera iteración dado que la condición del if se cumplió y el continue omite dicha iteración.)
