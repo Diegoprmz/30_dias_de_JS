@@ -1,0 +1,98 @@
+## HOY VEREMOS LOS BÚCLES ##
+
+Los búcles son justamente eso, bloques de código que iteran ciertos programas dentro de ellos, a continuación veremos con cuáles contamos:
+
+# Búcle FOR
+
+Este búcle funciona cuando tenemos la cantidad exacta de veces que queremos que el código itere, es bastante útil cuando quieres hacer conteos específicos o para hacer tareas específicas un número específico de veces.
+
+Sintaxis: 
+    for (inicialización; condición de salida; aumento/decremento) {
+        //Programa
+    }
+
+Ejempo:
+    for (let i = 0; i <= 5; i++){
+        console.log(i);
+    }
+    // 0 1 2 3 4 5
+
+Ejemplo de cómo cambiar a mayúsculas cada uno de los elementos de un array:
+    const countries = ["Finland", "Sweden", "Denmark", "Norway", "Iceland"];
+    const newArray = [];
+    for (lei i = 0; i < countries.length; i++){
+        newArray.push(countries[i].toUppercase());
+    } //["FINLAND", "SWEDEN", "DENMARK", "NORWAY", "ICELAND"]
+
+Sumar todos los elementosde un Array:
+    const numbers = [1, 2, 3, 4, 5];
+    const sum = 0;
+    for (let i = 0; i < numbers; i++) {
+        sum += numbers[i];
+    }
+    console.log(sum); // 15
+
+Crear un nuevo array a partir de uno ya existente:
+    const numbers = [1, 2, 3, 4, 5];
+    const newArr = [];
+    for(let i = 0; i < numbers.length; i++) {
+        newArr.push(numbers[i] ** 2);
+    }
+    console.log(newArr); // [1, 4, 9, 16, 25]
+
+    const countries = ["Finland", "Sweden", "Denmark", "Norway", "Iceland"];
+    const newArray = [];
+    for (lei i = 0; i < countries.length; i++){
+        newArray.push(countries[i].toUppercase());
+    }
+
+    
+
+# Búcle WHILE
+
+El búcle while itera mientras que la condición siga siendo false, en el momento en que la condición cambie el programa saldrá del búcle. Esto es especialmente útil cuando requieres esperar un evento o condición o una entrada del usuario válida.
+No es necesario poner un contador y un incremento/decremento ya que el búcle while iterará mientras que una condición no sea cumplida.
+
+Sintaxis:
+    while(*inicialización*; condición; *incremento/decremento*) {
+        //Programa
+    }
+
+Ejemplo:
+    let i = 0;
+    while(i <= 5) {
+        console.log(i);
+        i++;
+    } // 0, 1, 2, 3, 4, 5
+
+# Búcle DO... WHILE
+
+El búcle do... while es muy simimlar al búcle while, con la diferencia de que el búcle do while asegura que el código dentro del búcle se ejecute al menos una vez antes de preguntar si se volverá a repetir, esto es especialmente útil en casos donde requieres procesar una entrada del usuario y luego preguntar si desea continuar o en menús interactivos, donde el menú se muestra al menos una vez antes de continuar o salir.
+
+Sintaxis:
+    do {
+        // código a ejecutar 
+    } while (condición);
+
+Ejemplo: 
+    let i = 0;
+    do {
+        console.log(i);
+        i++;
+    } while (i <= 5);
+    // 0, 1, 2, 3, 4, 5
+
+# Búcle for of
+
+Usamos este búcle para iterar a través de un array si no estamos interesados en el index de cada elemento del array.
+
+Sintaxis:
+    for (variable of iterable) {
+        // código a iterar
+    }
+
+Ejemplo:
+    const numbers  = [1, 2, 3, 4, 5];
+    for (const num of numbers){
+        console.log(num)
+    }
