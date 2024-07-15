@@ -8,6 +8,7 @@ export const countries = [
     "Germany",
     "Hungary",
     "Ireland",
+    "Iceland",
     "Japan",
     "Kenya",
 ];
@@ -23,6 +24,11 @@ export const webTechs = [
 ];
 
 export const mernStack = ["MongoDB", "Express", "React", "Node"];
+
+export const fullStack = [
+    ["HTML", "CSS", "JS", "React"],
+    ["Node", "Express", "MongoDB"],
+];
 
 const alfabetoArr = "abcdefghijklmnñopqrstuvwxyz";
 export const alfabeto = alfabetoArr.split("");

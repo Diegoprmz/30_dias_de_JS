@@ -156,13 +156,13 @@ let shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
     console.log(shoppingCart);
 
 //EJERCICIO 4
-import  { countries }  from "./countries.js";
+/* import  { countries }  from "./countries.js";
 countries.includes("Ethiopia") ? console.log("Ethiopia") : countries.push("Ethiopia");
 
 //EJERCICIO 5
 import { webTechs } from "./web_techs.js";
 console.log(webTechs.includes("SASS"));
-webTechs.includes("SASS") ? console.log("Sass es un preprocesador de CSS") : webTechs.push("SASS"), console.log("Sass es un preprocesador de CSS");
+webTechs.includes("SASS") ? console.log("Sass es un preprocesador de CSS") : webTechs.push("SASS"), console.log("Sass es un preprocesador de CSS"); */
 
 //EJERCICIO 6
 const frontEnd = ["HTML", "CSS", "JS", "React", "Redux"];
