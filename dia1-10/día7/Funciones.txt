@@ -1,0 +1,326 @@
+## Funciones
+
+-¿Qué son y para qué sirven las funciones?
+
+Una función es un bloque de código reutilizable diseñadas para realizar una determinada tarea.
+Una función se declara con la palabra "function" seguida de un nombre distintivo y por último unos paréntesis (). Los paréntesis pueden tomar parámetros, una vez que esté parámetro se toma, se llamará "argumento". Una función también puede tomar un parámetro predeterminado. Para almacenar datos en una función, una función debe devolver ciertos tipos de datos. Para obtener dichos valores llamamos o invocamos a la función.
+
+Las funciones hacen que el código:
+    -Sea limpio y fácil de leer
+    -Reutilizable, lo que lo hace escalable
+    -Fácil de probar
+
+Una función se puede declarar o crear de un par de maneras:
+    -Función declarativa
+    -Función de expresión
+    -Función anónima
+    -Función flecha (Arrow function)
+
+
+
+#Función declarativa
+
+Una función declarativa es una función definida utilizando la palabra clave 'function', seguida del nombre clavde de la función, paréntesis para los parámetros y llaves para el bloque de código. Es una forma explicita de declarar funciones en JavaScript, que se puede invocar antes de su definición gracias al 'Hoisting'. 
+
+(El Hoisting esun comportamiento en JS donde las declaraciones de variables y funciones se mueven automáticamente al primcipio de su contexto de ejecución, ya sea global o de función; esto antes de que el código se ejecute. Esto permite que las funciones declarativas y las variables de tipo global "var" se utilicen antes de ser declaradas.)
+
+    //declaramos una función sin un parámetro
+        function functionName() {
+          // el código va aquí
+        }
+        functionName(); // llamando a la función por su nombre con paréntesis
+
+
+
+#Función sin parámetros y return
+
+La función como ya vimos, se puede declarar sin un parámetro ni return, aunque sin el return la salida de la función será undefined. Este tipo de funciones tienen la particularidad de que únicamente funcionan con su propio código, ya que no reciben parámetros.
+
+    // función sin parámetros. La función eleva al cuadrado un número
+        function square() {
+          let num = 2;
+          let sq = num * num;
+          console.log(sq);
+        }
+
+        square(); // 4
+
+    // función sin parámetro
+        function addTwoNumbers() {
+          let numOne = 10;
+          let numTwo = 20;
+          let sum = numOne + numTwo;
+
+          console.log(sum);
+        }
+
+        addTwoNumbers(); // una función tiene que ser llamada por su nombre para ser ejecutada
+
+
+
+# funciones que retornan un valor
+
+Las funciones pueden devolver valores, si una función no devuelven valores, el valor de una función no está definido. Escribamos las funciones anteriores con return. A partir de ahora, retornaremos el valor de una función en lugar de imprimirlo.
+
+    function printFullName() {
+      let firstName = "Asabeneh";
+      let lastName = "Yetayeh";
+      let space = " ";
+      let fullName = firstName + space + lastName;
+      return fullName;
+    }
+    console.log(printFullName());
+
+    function addTwoNumbers() {
+      let numOne = 2;
+      let numTwo = 3;
+      let total = numOne + numTwo;
+      return total;
+    }
+
+    console.log(addTwoNumbers());
+
+
+
+#Funciones con un parámetro
+Es una función que podemos pasar diferentes tipos de datos (number, string, boolean, object, function) como un parámetro. Al momento de invocar la función es necesario llamarla con el argumento a trabajar entre los paréntesis.
+
+    // función con un parámetro
+        function functionName(parm1) {
+          //el código va aquí
+        }
+        functionName(parm1); // durante la llamada o la invocación es necesario un argumento
+
+        function areaOfCircle(r) {
+          let area = Math.PI * r * r;
+          return area;
+        }
+
+        console.log(areaOfCircle(10)); // debe ser llamado con un argumento
+
+        function square(number) {
+          return number * number;
+        }
+
+        console.log(square(10));
+
+
+
+# Función con dos parámetros
+
+Lo mismo que la de un solo parámetro, con la diferencia de que aquí requiere dos parámetros para funcionar.
+
+    // función con dos parámetros
+
+        function functionName(parm1, parm2) {
+          //el código va aquí
+        }
+        functionName(parm1, parm2); // durante la llamada o invocación se necesitan dos argumentos
+        // la función sin parámetros no recibe entrada, así que hagamos una función con parámetros
+
+
+        function sumTwoNumbers(numOne, numTwo) {
+          let sum = numOne + numTwo;
+          console.log(sum);
+        }
+        sumTwoNumbers(10, 20); // llamando a la función
+        // si una función no es retorna esta no almacena datos, por lo que debe retornar
+
+
+        function sumTwoNumbers(numOne, numTwo) {
+          let sum = numOne + numTwo;
+          return sum;
+        }
+
+
+        console.log(sumTwoNumbers(10, 20));
+        function printFullName(firstName, lastName) {
+          return `${firstName} ${lastName}`;
+        }
+        console.log(printFullName("Asabeneh", "Yetayeh"));
+
+
+
+# Funciones con muchos parámetros
+
+Reciben distintos parámetros para trabajar.
+
+    // función con múltiples parámetros
+
+        function functionName(parm1, parm2, parm3,...){
+          //el código va aquí
+        }
+        functionName(parm1,parm2,parm3,...) // durante la llamada o la invocación necesita tres argumentos
+
+
+    // esta función toma un array como un parámetro y suma los números en el array
+
+        function sumArrayValues(arr) {
+          let sum = 0;
+          for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+          }
+          return sum;
+        }
+
+        const numbers = [1, 2, 3, 4, 5]; 
+
+        //llamada a la función
+        console.log(sumArrayValues(numbers));
+
+        const areaOfCircle = (radius) => {
+          let area = Math.PI * radius * radius;
+          return area;
+        }
+        console.log(areaOfCircle(10));
+
+
+
+# Función con número ilimitado de parámetros
+
+A veces no sabemos cuántos argumetnos va a pasar el usuario. Por lo tanto, debemos saber cómo definir una función que pueda tomar un número ilimitado de argumentos. La fomra en que lo hacemos tiene una diferencia significativa entre una función declarativa (función regular) y una arrow funtion. Veamos ejemplos de ambas para comprender las diferencias.
+
+-Número ilimitado de parámetros en una función regular
+
+Una función declarativa proporciona una función con alcance de argumentos array como objeto. Se puede acceder a cualquier cosa que pasemos como argumento en la función desde el objeto de argumentos dentro de las funciones.
+
+    // Accedemos a los argumentos del objeto
+​
+        function sumAllNums() {
+         console.log(arguments)
+        }
+
+        sumAllNums(1, 2, 3, 4)
+        // Arguments(4) [1, 2, 3, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+
+-Número ilimitado de parámetros en una arrow function
+
+Una arrow function no tiene el objeto de alcance de los argumentos. Para implementar un número ilimitado de argumentos en una arrow function, usamos el operador de propagación seguido de cualquier nombre de parámetro. Se puede acceder a cualquier elemento que hayamos pasado como argumento en la función como array en la arrow function. Veamos un ejemplo:
+
+// Accedemos a los argumentos del objeto
+​
+        const sumAllNums = (...args) => {
+         // console.log(arguments), objeto de argumentos no encontrado en la función flecha
+         // en su lugar, usamos un parámetro seguido de un operador de propagación (...)
+         console.log(args)
+        }
+
+        sumAllNums(1, 2, 3, 4)
+        // [1, 2, 3, 4]
+
+    // declaración
+​
+        const sumAllNums = (...args) => {
+          let sum = 0
+          for (const element of args) {
+            sum += element
+          }
+          return sum
+        }
+
+        console.log(sumAllNums(1, 2, 3, 4)) // 10
+        console.log(sumAllNums(10, 20, 13, 40, 10))  // 93
+        console.log(sumAllNums(15, 20, 30, 25, 10, 33, 40))  // 173
+
+
+
+# Funciones anónimas
+
+Función anónima o sin nombre.
+
+    const anonymousFun = function () {
+      console.log("Soy una función anónima y mi valor se almacena en anonymousFun");
+    };
+
+# Funciones de expresión
+
+Las funciones de expresión son funciones anónimas declaradas en una variable, para retornar un valor debemos llamar al nombre de la variable. Este tipo de funciones no tienen hoistin ya que se suelen almacenar en una variable de tipo "const". 
+
+    // Function expression
+        const square = function (n) {
+          return n * n;
+        };
+
+        console.log(square(2)); // -> 4
+
+
+
+# Funcion de autoinvocación (IIFE, inmediatly invoked Function Expression)
+
+Las funciones de autoinvocación son funciones anónimas que no necesitan ser llamadas para devolver un valor. Se suelen asignar a una variable para que así puedan ser invocadas.
+
+    // Sintaxis de esta función
+
+        (function() {
+        // Código de la función
+        })();
+
+
+        (function (n) {
+          console.log(n * n);
+        })(2); // 4, pero en lugar de solo imprimir si queremos regresar y almacenar los datos, hacemos lo que se muestra a continuación
+
+        let squaredNum = (function (n) {
+          return n * n;
+        })(10);
+
+        console.log(squaredNum);
+
+
+
+# Arrow Function (Función Flecha)
+
+La arrow function es una alternativa para escribir una función, sin embargo, la función declarativa y la función flehca tienen unas diferencias menores.
+
+La función flecha usa una flecha en lugar de la palabra clave function para declarar una función. Veamos tanto la función declarativa como la Arrow Funcion
+
+    // Así es como escribimos una función normal o declarativa
+        function square(n) {
+          return n * n;
+        }
+        console.log(square(2)); // 4
+
+
+    // Cambiemos esta función de declarativa a una función flecha
+        const square = (n) => {
+          return n * n;
+        };
+        console.log(square(2)); // -> 4
+
+    // si tenemos solo una línea en el bloque de código, se puede escribir de la siguiente manera, return explícito
+        const square = (n) => n * n; // -> 4
+
+
+
+# Fucnión con parámetros por defecto
+
+A veces pasamos valores predeterminados a los parámetros, cuando invocamos la función, si no pasamos un argumento, se usará el valor predeterminado. Tanto la función declarativa como la fucnión flecha pueden tener un valor o valores predeterminados.
+
+    // sintaxis
+        // Declarando una función
+        function functionName(param = value) {
+          //código
+        }
+
+        // Llamando una función
+        functionName();
+        functionName(arg);
+
+    // EJempplo
+        function greetings(name = "Peter") {
+          let message = `${name}, welcome to 30 Days Of JavaScript!`;
+          return message;
+        }
+
+        console.log(greetings());
+        console.log(greetings("Asabeneh"));
+
+        function weightOfObject(mass, gravity = 9.81) {
+          let weight = mass * gravity + " N"; // el valor tiene que ser cambiado a string primero
+          return weight;
+        }
+
+        console.log("Weight of an object in Newton: ", weightOfObject(100)); // 9.81 es la gravedad en la superficie de la tierra
+        console.log("Weight of an object in Newton: ", weightOfObject(100, 1.62)); // gravedad en la superficie de la luna
+
