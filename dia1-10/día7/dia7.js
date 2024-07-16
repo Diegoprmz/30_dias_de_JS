@@ -135,3 +135,119 @@ console.log(mayorDeTresNumeros); */
 
 console.log("## EJERCICIOS NIVEL 2 ##");
 
+//EJERCICIO 1
+function solveLinEquation(a, b, c) {
+    let interseccionY = -c / b;
+    let interseccionX = -c / a;
+    let pendiente = -a / b;
+    return {interseccionX , interseccionY, pendiente};
+}
+
+//EJERCICIO 2
+function solveQuadEcuation(a, b, c) {
+    let valorX1 = (-b + Math.sqrt((b ** 2) - 4 * a * c)) / 2;
+    let valorX2 = (-b - Math.sqrt((b ** 2) - 4 * a * c)) / 2;
+    const ecuacionCuadratica = [valorX1, valorX2];
+    return ecuacionCuadratica;
+}
+
+//EJERCICIO 3
+function printArray(arr) {
+    for (const print of arr) {
+        console.log(print);
+    }
+}
+
+//EJERCICIO 4
+function showDateTime() {
+    const date = new Date();
+    let dia = date.getDate().toString().padStart(2, '0');
+    let mes = (date.getMonth() + 1 ).toString().padStart(2, '0');
+    let año = date.getFullYear();
+
+    let hora = date.getHours().toString().padStart(2, '0');
+    let minutos = date.getMinutes().toString().padStart(2, '0');
+
+    let formato = `${dia}/${mes}/${año}  ${hora}:${minutos}`;
+    return formato;
+}
+console.log(showDateTime());
+
+//EJERCICIO 5
+function swapValues(a, b) {
+    let cambio = a;
+    let newX = b;
+    let newY = cambio;
+
+    let newValues = `X = ${newX}, Y = ${newY}`;
+    return newValues;
+}
+
+//EJERCICIO 6
+const arrEjemplo = [1, 2, 3, 4, 5];
+function reverseArray(arr) {
+    const newArrReverse = [];
+    for (const element of arr) {
+        newArrReverse.unshift(element);
+    }
+    return newArrReverse;
+}
+console.log(reverseArray(arrEjemplo));
+
+//EJERCICIO 7
+const frutas = [
+    "manzana",
+    "banana",
+    "naranja",
+    "uva",
+    "mango",
+    "piña",
+    "fresa",
+    "kiwi",
+    "melón",
+    "sandía",
+    "pera",
+    "durazno",
+    "cereza",
+    "mora",
+    "frambuesa",
+    "arándano",
+    "higo",
+    "ciruela",
+    "papaia",
+    "granada",
+    "coco",
+    "limón",
+    "mandarina",
+    "aguacate",
+    "guayaba",
+    "papaya"
+];
+
+function capitalizedArray(arr) {
+    const arrayCapitalizado = [];
+    for (const elemento of arr) {
+        arrayCapitalizado.push(elemento.charAt(0).toUpperCase() + elemento.slice(1).toLowerCase());
+    }
+    return arrayCapitalizado;
+}
+
+console.log(capitalizedArray(frutas));
+
+//EJERCICIO 8
+function addItem(element) {
+    const arrayItems = [];
+    arrayItems.push(element);
+    return arrayItems;
+}
+
+//EJERCICIO 9
+function removeItem(elemento, arr) {
+    const arrayLower = arr.map(element => element.toLowerCase());
+    elemento = elemento.toLowerCase();
+    let index = arrayLower.indexOf(elemento);
+    if (index !== -1) {
+        arrayLower.splice(index, 1);
+    }
+    return arrayLower;
+}
