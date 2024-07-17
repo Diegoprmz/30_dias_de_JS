@@ -178,7 +178,7 @@ Reciben distintos parámetros para trabajar.
 
 # Función con número ilimitado de parámetros
 
-A veces no sabemos cuántos argumetnos va a pasar el usuario. Por lo tanto, debemos saber cómo definir una función que pueda tomar un número ilimitado de argumentos. La fomra en que lo hacemos tiene una diferencia significativa entre una función declarativa (función regular) y una arrow funtion. Veamos ejemplos de ambas para comprender las diferencias.
+A veces no sabemos cuántos argumetnos va a pasar el usuario. Por lo tanto, debemos saber cómo definir una función que pueda tomar un número ilimitado de argumentos. La forma en que lo hacemos tiene una diferencia significativa entre una función declarativa (función regular) y una arrow funtion. Veamos ejemplos de ambas para comprender las diferencias.
 
 -Número ilimitado de parámetros en una función regular
 

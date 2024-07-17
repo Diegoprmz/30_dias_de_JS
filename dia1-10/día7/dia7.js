@@ -251,3 +251,185 @@ function removeItem(elemento, arr) {
     }
     return arrayLower;
 }
+
+//EJERCICIO 10
+function sumOfNumbers(i) {
+    let numeroUsuario = i;
+    let sumaDeNumeros = 0;
+    for ( let i = 0; i <= numeroUsuario; i++) {
+        sumaDeNumeros += i;
+    }
+    return sumaDeNumeros;
+}
+console.log(sumOfNumbers(5));
+
+//EJERCICIOS 11
+function sumOfOdds(number) {
+    let numeroUsuario = parseInt(number);
+    let sumaImpares = 0;
+    for (let i = 0; i <= numeroUsuario; i++) {
+        if (i % 2 !== 0) {
+            sumaImpares += i;
+        };
+    }
+    return sumaImpares;
+}
+console.log(sumOfOdds(10));
+
+//EJERCICIO 12
+function sumofEven(number) {
+    let numeroUsuario = number;
+    let sumaPares = 0;
+    for (let i = 0; i <= numeroUsuario; i++){
+        if (i % 2 == 0) {
+            sumaPares += i;
+        }
+    }
+    return sumaPares;
+}
+console.log(sumofEven(5));
+
+//EJERCICIO 13
+function evensAndOdds(naturalNumber) {
+    let numeroUsuario = naturalNumber;
+    let numeroImpar = 0;
+    let numeroPar = 0;
+    for(let i = 0; i <= numeroUsuario; i++) {
+        if (i % 2 == 0) {
+            numeroPar++
+        } else {
+            numeroImpar++
+        }
+    }
+    return {
+        numeroImpar,
+        numeroPar
+    }
+}
+console.log(evensAndOdds(100));
+
+//EJERCICIO 14
+function sumaValoresIlimitaods(...Numbers) {
+    let sumaDeNumerosIlimitados = 0;
+    for (const number of Numbers) {
+        sumaDeNumerosIlimitados += number;
+    }
+    return sumaDeNumerosIlimitados;
+}
+
+console.log(sumaValoresIlimitaods(5, 9, 16, 20, 35));
+
+//EJERCICIO 15
+function randomUserIp() {
+    let primerOcteto = Math.floor(Math.random() * 255) + 1;
+    let segundoOcteto = Math.floor(Math.random() * 255) + 1;
+    let tercerOcteto = Math.floor(Math.random() * 255) + 1;
+    let cuartoOcteto = Math.floor(Math.random() * 255) + 1;
+    const randomIp = `${primerOcteto}.${segundoOcteto}.${tercerOcteto}.${cuartoOcteto }`;
+    return randomIp;
+}
+console.log(randomUserIp());
+
+//EJERCICIO 16
+function randomMacAddress() {
+    const arrHexadecimal = "0123456789ABCDEF";
+    let direccionMac = '';
+    for (let i = 0; i <= 5; i++) {
+        direccionMac += arrHexadecimal[Math.floor(Math.random() * 16)];
+        direccionMac += arrHexadecimal[Math.floor(Math.random() * 16)];
+        if (i < 5) direccionMac += ":";
+    }
+    return direccionMac;
+}
+console.log(randomMacAddress());
+
+//EJERCICIO 17
+function randomHexaNumberGenerator() {
+    const arrHexadecimal = "0123456789ABCDEF";
+    let codigoHexadecimal = '#';
+    for (let i = 0; i <= 5; i++) {
+        codigoHexadecimal += arrHexadecimal[Math.floor(Math.random() * 16)];
+    }
+    return codigoHexadecimal;
+}
+console.log(randomHexaNumberGenerator());
+
+//EJERCICIO 18
+function userIdGenerator() {
+    const arrHexadecimal = "0123456789ABCDEF";
+    let userId = '';
+    for (let i = 0; i <= 6; i++) {
+        userId += arrHexadecimal[Math.floor(Math.random() * 16)];
+    }
+    return userId;
+}
+console.log(`Id de usuario: ${userIdGenerator()}`);
+
+console.log("## EJERCICIOS NIVEL 3 ##");
+
+//EJERCICIO 1
+function userIdGeneratedByUser() {
+    const arrHexadecimal = "0123456789ABCDEF";
+    let cantidadCaracteres = parseInt(prompt(`¿Cuántos carácteres tendrán los ID's?`));
+    let cantidadIds = parseInt(prompt(`¿Cuántos ID's se van a generar?`));
+    let objetoIds = '';
+    for (let i = 0; i < cantidadIds; i++) {
+        for (let j = 0; j <= cantidadCaracteres; j++) {
+            objetoIds += arrHexadecimal[Math.floor(Math.random() * 16)];
+        }
+        if (i == cantidadIds - 1) {
+            break;
+        } else {
+            objetoIds += ', ';
+        }
+    }
+    return objetoIds;
+}
+
+//EJERCICIO 2
+function rgbColorGenerator() {
+    let primerOcta = Math.floor(Math.random() * 256);
+    let segundoOcta = Math.floor(Math.random() * 256);
+    let tercerOcta = Math.floor(Math.random() * 256);
+    return `rgb(${primerOcta}, ${segundoOcta}, ${tercerOcta})`;
+}
+console.log(rgbColorGenerator());
+
+//EJERCICIO 3
+function arrayOfHexaColors() {
+    const arrHexadecimal = "0123456789ABCDEF";
+    let contador = Math.floor(Math.random() * 6) + 1;
+    const colores = [];
+    for (let i = 0; i <= contador; i++) {
+        let codigo = '';
+        codigo += '#';
+        for (let j = 0; j <= 5; j++) {
+            codigo += arrHexadecimal[Math.floor(Math.random() * 16)];
+        }
+        colores.push(codigo)
+    }
+    return colores;
+}
+console.log(arrayOfHexaColors());
+
+//EJERCICIO 4
+function arrayOfRgbColors() {
+    let contador = Math.floor(Math.random() * 6) + 1;
+    const colores = [];
+    for (let i = 0; i <= contador; i++) { //Genera un número de codigos de color
+        let numero = '';
+        for (let j = 0; j <= 2; j++){ //Genera los tres octas de los códigos
+            let codigo = Math.floor(Math.random() * 256);
+            numero += codigo;
+            if (j == 2) {
+                break;
+            } else {
+                numero += ', ';
+            }
+            
+        }
+        colores.push(`rgb(${numero})`);
+    }
+    return colores;
+}
+console.log(arrayOfRgbColors());
