@@ -433,3 +433,266 @@ function arrayOfRgbColors() {
     return colores;
 }
 console.log(arrayOfRgbColors());
+
+//EJERCICIO 5
+function convertHexaToRgb(hexa) {
+    if (hexa.startsWith('#')) {
+        hexa = hexa.slice(1);
+    }
+    let r = parseInt(hexa.slice(0, 2), 16);
+    let g = parseInt(hexa.slice(2, 4), 16);
+    let b = parseInt(hexa.slice(4, 6), 16);
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+console.log(convertHexaToRgb('#ffffff'));
+
+//EJERCICIO 6
+function convertRgbToHexa(rgb) {
+    if (rgb.startsWith('rgb(')) {
+        rgb = rgb.slice(4, -1);
+    }
+    const [r, g, b] = rgb.split(',').map(num => parseInt(num.trim(), 10));
+    const toHex = num => num.toString(16).padStart(2, '0');
+
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+console.log(convertRgbToHexa("rgb(255,2,80)"));
+
+//EJERCICIO 7
+function generateColors(codeType, numberCodes) {
+    if (codeType == 'hexa') {
+        const arrHexadecimal = "0123456789ABCDEF";
+        let contador = numberCodes;
+        const colores = [];
+        for (let i = 0; i < contador; i++) {
+            let codigo = '';
+            codigo += '#';
+            for (let j = 0; j <= 5; j++) {
+                codigo += arrHexadecimal[Math.floor(Math.random() * 16)];
+            }
+            colores.push(codigo)
+        }
+        return colores;
+    } else if (codeType == 'rgb') {
+        const colores = [];
+        for (let i = 0; i < numberCodes; i++) { //Genera un número de codigos de color
+        let numero = '';
+        for (let j = 0; j <= 2; j++){ //Genera los tres octas de los códigos
+            let codigo = Math.floor(Math.random() * 256);
+            numero += codigo;
+            if (j == 2) {
+                break;
+            } else {
+                numero += ', ';
+            }
+            
+        }
+        colores.push(`rgb(${numero})`);
+        }
+        return colores;
+    }
+}
+console.log(generateColors("rgb", 5));
+
+//EJERCICIO 8
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i >= 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temporal = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temporal;
+    }
+    return arr;
+}
+let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(shuffleArray(arr));
+
+//EJERCICIO 9
+function factorial(num) {
+    let fac = num;
+    for (let i = num; i >= 1; i--) {
+        if (i > 1) {
+            let temp = fac * (i - 1);
+            fac = temp;
+        } else if (i = 1) {
+            let temp = fac * i;
+            fac = temp;
+        }
+    }
+    return fac;
+}
+console.log(factorial(8));
+
+//EJERCICIO 10
+function isEmpty(element) {
+    let bandera = '';
+    if (element) {
+        bandera += 'No está vacío';
+    } else {
+        bandera += 'Está vacío';
+    }
+    return bandera;
+}
+console.log(isEmpty());
+
+//EJERCICIO 11
+function sum(...args) {
+    return args.reduce((acc, val) => acc + val, 0);
+}
+console.log(sum(5,8, 9, 1, 2, 222, 777));
+
+//EJERCICIO 12
+const numbers = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 9,
+    11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+    41, 42, 43, 44, 45, 46, 47, 48, 49, 50
+];
+function sumOfArrayItems(arr) {
+    for(let i =0; i <= arr.length - 1; i++) {
+        if (typeof(arr[i]) !== 'number') {
+            console.log('Arr no es un número');
+            continue;
+        } else {
+            arr = arr.reduce((acc , val) => acc + val, 0);
+        }
+        return arr;
+    }
+}
+console.log(sumOfArrayItems(numbers));
+
+//EJERCICIO 13
+function average(arr) {
+    let largo = arr.length;
+    for(let i =0; i <= arr.length - 1; i++) {
+        if (typeof(arr[i]) !== 'number') {
+            console.log('Arr no es un número');
+            continue;
+        } else {
+            arr = arr.reduce((acc , val) => acc + val, 0);
+        }
+        return arr/largo;
+    }
+}
+console.log(average(numbers));
+
+//EJERCICIO 14
+const fruits = ['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot'];
+function modifyArray(arr){
+    if (arr.length < 4) {
+        console.log('Elemento no encontrado');
+    } else {
+        arr[4] = arr[4].toUpperCase();
+    }
+    return arr;
+}
+console.log(modifyArray(fruits));
+
+//EJERCICIO 15
+function isPrime(num) {
+    if (num <=1 ) return false;
+    for(let i = 2; i <= Math.sqrt(num); i++) {
+        if ( num % i === 0) {
+            return 'No es primo';
+        }
+    }
+    return `El numero ${num} es primo`;
+}
+console.log(isPrime(19));
+
+//EJERCICIO 16
+function isUnique(arr) {
+    const seen = new Set();
+    const duplicados = new Set();
+
+    for (const element of arr) {
+        if (seen.has(element)) {
+            duplicados.add(element);
+        } else {
+            seen.add(element);
+        }
+    }
+    for (const element of arr) {
+        if (duplicados.has(element)) {
+            console.log(`El elemento ${element} está repetido`);
+        } else {
+            console.log(`El elemento ${element} es único`);
+        }
+    }
+}
+
+//EJERCICIO 17
+const mixedArray = [
+    [1, 'texto', true],         // Primera fila: número, cadena, booleano
+    [3.14, 'más texto', false], // Segunda fila: número, cadena, booleano
+    [null, [1, 2, 3], { clave: 'valor' }] // Tercera fila: null, array, objeto
+];
+const numberArray = [10, 20, 30, 40, 50];
+
+function typeOfData(arr) {
+    const tipos = new Set();
+
+    function addElementTypes(subArray) {
+        for (const element of subArray) {
+            if (Array.isArray(element)) {
+                addElementTypes(element); // Recursión para manejar arrays anidados
+            } else {
+                tipos.add(typeof(element));
+            }
+        }
+    }
+    addElementTypes(arr);
+
+    console.log(tipos);
+    if (tipos.size > 2) {
+        return `El array tiene distintos tipos de datos`;
+    } else { 
+        return `El array es un único tipo de datos`;
+    }
+}
+console.log(typeOfData(mixedArray));
+console.log(typeOfData(numberArray));
+
+//EJERCICIO 18
+function isValidVariable(variable) {
+    for (const item of toString(variable)) {
+        if (item == /.,;@/g) {
+            return 'Variable no válida';
+        } else {
+            return 'Variable válida';
+        }
+    }
+}
+const $isNoche = true;
+const isNight_ = false;
+console.log(isValidVariable($isNoche));
+
+//EJERCICIO 19
+function randomArraySeven() {
+    const repetidos = new Set();
+    const randomNumbers = [];
+    for (let i = 0; i <= 6; i++) {
+        let posibleNumber = Math.floor(Math.random() * 10);
+        if (repetidos.has(posibleNumber)) {
+            i--;
+            continue;
+        } else {
+            repetidos.add(posibleNumber);
+            randomNumbers.push(posibleNumber);
+        }
+    }
+    return randomNumbers.sort();
+}
+
+console.log(randomArraySeven());
+
+//EJERCICIO 20
+import { countriesComplete } from "../día5/countries.js";
+let otherCountriesComplete = countriesComplete;
+
+function reverseCountries(arr) {
+    return otherCountriesComplete.reverse();
+}
+console.log(reverseCountries());
