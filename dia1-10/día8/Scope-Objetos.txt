@@ -1,0 +1,208 @@
+## Día 8 
+
+# Scope (Alcance)
+
+La variable es funcdamental en la programación. Al declar una variable lo podemos hacer con las palabras clave var, let y const. Una variable puede declararse a diferentes scope. El scope de las variables puede ser :
+
+    -Global
+    -Local
+
+# Objeto Global Window
+(Abriré un documento llamado scpoe.js en el que haré todas las pruebas de los ejemplos ./scope.js)
+
+Sin usar console log podemos ver el valor de a y b si escribes a o b en el navegador. Esto significa que a y b ya están disponibles en el navegador. Esp significa que están disponibles en window.
+var a = "JavaScript";
+var b = 10;
+function letsLearnScope() {
+    console.log(a, b);
+    if (true) {
+        console.log(a, b);
+    }
+}
+console.log(a, b);
+
+
+
+# Global Scope
+
+Una variable declarada globalmente puede ser accedida desde cualquier lugar del mismo archivo. Pero también es relativo ya que puede ser global a nivel archivo o a nivel bloque de código.
+
+//scope.js
+let a = "JavaScript"; // es un scope global que se encontrará en cualquier parte de este archivo
+let b = 10; // es un scope global que se encontrará en cualquier parte de este archivo
+
+function letsLearnScope() {
+  console.log(a, b); // JavaScript 10, accesible
+  if (true) {
+    let a = "Python"; //Aquí tanto a, b son objetos globales dentro de la estructura IF, una vez fuera de esto no se pueden acceder y vuelve a tomar los valores globales de a y b, los cuales son los del inicio 
+    let b = 100;
+    console.log(a, b); // Python 100
+  }
+  console.log(a, b);
+}
+letsLearnScope();
+console.log(a, b); // JavaScript 10, accesible
+
+
+
+# Local Scope
+
+Una variable declarada de forma local unicamente podrá ser accedida en determinados bloques de código.
+    - Scope de bloque
+    - Scope de la función
+
+//scope.js
+let a = "JavaScript"; // es un scope global que se encontrará en cualquier parte de este archivo
+let b = 10; // es un scope global que se encontrará en cualquier parte de este archivo
+
+// Scope de la función
+function letsLearnScope() {
+  console.log(a, b); // JavaScript 10, accesible
+  let value = false;
+
+  // Scope del bloque
+  if (true) {
+    // podemos acceder desde la función y fuera de la función pero
+    // las variables declaradas dentro del if no serán accesibles fuera del bloque if
+    let a = "Python";
+    let b = 20;
+    let c = 30;
+    let d = 40;
+    value = !value;
+    console.log(a, b, c, value); // Python 20 30 true
+  }
+  // no podemos acceder a c porque el scope de c es sólo el bloque if
+  console.log(a, b, value); // JavaScript 10 true
+}
+letsLearnScope();
+console.log(a, b); // JavaScript 10, accesible
+
+
+
+# Objetos 
+
+Literalmente todo puede ser un objeto y los objetos tiene propiedades y las propiedades tienen valores, por lo que un objeto es un par de cñave-valor. EL orden de la clave no está reservado, o no hay orden. Para crear un objeto literal utilizamos dos llaves:
+
+    # Crear un objeto vacío
+    
+    const persona = {};
+
+    # Crear un objeto con valores
+
+    const person = {
+        firstName: "Asabeneh",
+        lastName: "Yetayeh",
+        age: 25,
+        country: "Finland",
+        city: "Helsinki",
+        skills: ["HTML", "CSS", "JavaScript", "React", "Node", "MongoDB", "Python", "D3.js"],
+        isMarried: true,
+    };
+    console.log(person)
+
+    # Obtener valores de un objeto
+
+    Para obtener valores de un objeto podemos utilizar un punto "." seguido de la llave/clave si es de una sola palabra.
+    También podemos acceder a ellos utilizando corchetes y comillas.
+
+    ejemplos:
+        console.log(person.firstName); // "Asabeneh"
+        console.log(person["firstName"]); // "Asabeneh"
+
+    # Crear métodos de objetos 
+
+    Dentro del siguiente objeto añadiremos una función que tiene una particularidad, la cuál es que dentro de si misma tiene una función que se llama a si misma como valor con la palabra "this." seguido de la llave que deseemos utilizar. 
+
+    const person = {
+        firstName: "Asabeneh",
+        lastName: "Yetayeh",
+        age: 250,
+        country: "Finland",
+        city: "Helsinki",
+        skills: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "Node",
+          "MongoDB",
+          "Python",
+          "D3.js",
+        ],
+        getFullName: function () {
+          return `${this.firstName} ${this.lastName}`;
+        },
+    };
+    console.log(person.getFullName()); // Asabeneh Yetayeh
+
+    # Establecer una nueva clave para un objeto
+
+    Los objetos son datos mutables y podemos modificar el contenido de un objeto después de su creación.
+    Se pueden establecer nuevas claves para el objeto en cuestión, una fomra es la notación de punto y otra la de corchetes, ambas funcionan como si fuese el método .push para un array, con la diferecia de que aquí trabajamos con objetos.
+
+        -Notación de punto "." y corchete "[]"
+
+        const person = {
+            firstName: "Asabeneh",
+            lastName: "Yetayeh",
+            age: 250,
+            country: "Finland",
+            city: "Helsinki",
+            skills: [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React",
+              "Node",
+              "MongoDB",
+              "Python",
+              "D3.js",
+            ],
+            getFullName: function () {
+              return `${this.firstName} ${this.lastName}`;
+            },
+        };
+        person.nacionalidad = "Ethiopia";
+        person["equipo"] = "Real Madrid";
+
+    # Métodos de los Objetos
+
+    Existen diferentes métodos para manipular objetos. Estos son solo algunos.
+
+        # Acceso a llaves/propiedades
+            -Notación de punto: Obj.llave
+            -Notación de corchetes: Obj["propiedad"]
+        
+        # Añadir o modificar llaves/propiedades
+            -Notación de punto: "obj.llave = valor"
+            -Notación de punto: "obj["llave"] = valor"
+        
+        # Eliminar llaves/propiedades
+            -delete: "delete obj.propiedad"
+        
+        # Comprobar existencia de llaves/propiedades
+            -in: "llave in obj"
+            -hasOwnProperty: "obj.hasOwnProperty('llave')"
+        
+        # Iterar sobre llaves/propiedades
+            -for in: "for (let llave in obj) {console.log(llave, obj[llave]); }"
+            -object.keys(): "object.keys(obj).forEach(llave => console.log(key, obj[llave]));"
+            -object.entries(): "object.entries(obj).forEach(([key, value]) => console.log(key, value));"
+        
+        # Obtener valores
+            -object.values(): "object.values(obj)"
+        
+        # Obtener llaves
+            -object.keys(); "object.keys(obj)"
+        
+        # Copiar objetos
+            -object.assign(): "objbect.assign({}, obj)"
+            -spread Operator: "{...obj1}"
+        
+        # Combinar Objetos
+            -object.assign(): "object.assign({}, obj1, obj2)"
+            -spread operator: "{...obj1, ...obj2}"
+        
+        # Congelar o sellar objetos
+            -object.freeze(): "object.freeze(obj)" (Hace que el objeto sea inmutable)
+            -object.seal(): "object.seal(obj)" (previene la adición de nuevas propiedades y marca el objeto como sellado)
