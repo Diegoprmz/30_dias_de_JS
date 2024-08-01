@@ -2,6 +2,7 @@ import { countries } from "./arrays.js";
 import { names } from "./arrays.js";
 import { numbers } from "./arrays.js";
 import { products } from "./arrays.js";
+import { countriesComplete } from "../día5/countries.js";
 
 console.log('## Ejercicios Día 9 ##');
 console.log('## Ejercicios Nivel 1 ##');
@@ -133,3 +134,75 @@ console.log(dondeRusia);
 console.log('## Ejercicios nivel 2 ##');
 
 //Ejercicio 1
+const preciosTotales = products.map(product => Number(product.price)).reduce((acc, element) => acc + element, 0);
+console.log(preciosTotales);
+
+//Ejercicio 2
+const sumaTotalProductos = products.reduce((acc, product) => acc + Number(product.price), 0);
+console.log(sumaTotalProductos);
+
+//Ejercicio 3
+function categorizeCountries() {
+    const categorizeCountriesArr = [];
+    const paisesLand = countriesComplete.filter((country) => {
+        return country.includes('land');
+    })
+    categorizeCountriesArr.push(paisesLand);
+
+    const paisesIa = countriesComplete.filter((country) => {
+        return country.includes('ia');
+    })
+    categorizeCountriesArr.push(paisesIa);
+
+    const paisesIsland = countriesComplete.filter((country) => {
+        return country.includes('Island');
+    })
+    categorizeCountriesArr.push(paisesIsland);
+
+    const paisesStan = countriesComplete.filter((country) => {
+        return country.includes('stan');
+    })
+    categorizeCountriesArr.push(paisesStan);
+    return categorizeCountriesArr;
+};
+console.log(categorizeCountries());
+
+//Ejercicio 4
+const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+function lettersAndCountries() {
+    const arrLetrasPaises = [];
+    for(let i = 0; i < alfabeto.length; i++) {
+        const newRaw = countriesComplete.filter((country) => {
+            return alfabeto[i] === country.charAt(0);
+        })
+        arrLetrasPaises.push(`${alfabeto[i]}: ${newRaw.join(', ')}`);
+    }
+    return arrLetrasPaises;
+}
+console.log(lettersAndCountries());
+
+//Ejercicio 5
+function getFirstTenCountries() {
+    const firstTenCountries = countriesComplete.slice(0, 10);
+    return firstTenCountries;
+};
+console.log(getFirstTenCountries());
+
+//Ejercicio 6
+function getLastTenCountries() {
+    const lastTenCountries = countriesComplete.slice(countriesComplete.length - 10, countriesComplete.length);
+    return lastTenCountries;
+}
+console.log(getLastTenCountries());
+
+//Ejercicio 7
+function mostUsedLetter(callbakc) {
+    let bandera = '';
+    for (let i = 0; i <= 25; i++) {
+        if (callbakc[i].length === alfabeto[i]) {
+            bandera = callbakc[i];
+        }
+    }
+    return bandera;
+}
+console.log(mostUsedLetter(lettersAndCountries()));
