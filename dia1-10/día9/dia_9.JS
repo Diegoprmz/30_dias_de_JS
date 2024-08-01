@@ -131,3 +131,5 @@ const dondeRusia = countries.findIndex((element) => {
 console.log(dondeRusia);
 
 console.log('## Ejercicios nivel 2 ##');
+
+//Ejercicio 1
