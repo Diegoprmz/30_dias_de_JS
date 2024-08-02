@@ -175,7 +175,10 @@ function lettersAndCountries() {
         const newRaw = countriesComplete.filter((country) => {
             return alfabeto[i] === country.charAt(0);
         })
-        arrLetrasPaises.push(`${alfabeto[i]}: ${newRaw.join(', ')}`);
+        arrLetrasPaises.push({
+            letter: alfabeto[i],
+            countries: newRaw
+        });
     }
     return arrLetrasPaises;
 }
@@ -196,13 +199,20 @@ function getLastTenCountries() {
 console.log(getLastTenCountries());
 
 //Ejercicio 7
-function mostUsedLetter(callbakc) {
-    let bandera = '';
-    for (let i = 0; i <= 25; i++) {
-        if (callbakc[i].length === alfabeto[i]) {
-            bandera = callbakc[i];
+const countriesByCapitalLetter = lettersAndCountries();
+function mostUsedCapittalLetter(objetoPaises) {
+    let bandera = 0;
+    let letraUsada = '';
+    for (const obj of objetoPaises) {
+        let largoArr = obj.countries.length;
+        if (largoArr > bandera) {
+            bandera = largoArr;
+            letraUsada = obj.letter;
         }
     }
-    return bandera;
-}
-console.log(mostUsedLetter(lettersAndCountries()));
+    return letraUsada;
+};
+console.log(mostUsedCapittalLetter(countriesByCapitalLetter));
+
+console.log('## Ejercicios nivel 3 ##');
+
